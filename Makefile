@@ -6,7 +6,7 @@
 #    By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 10:43:03 by amayor            #+#    #+#              #
-#    Updated: 2020/05/06 12:46:32 by amayor           ###   ########.fr        #
+#    Updated: 2020/05/09 14:07:44 by amayor           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 COMPILER = gcc
 ARCHIVER = ar rc
-NAME = libft
+NAME = libft.a
 RANLIB  = ranlib
 SRCS_FILES = ft_memset.c \
 			ft_bzero.c \
@@ -23,7 +23,11 @@ SRCS_FILES = ft_memset.c \
 			ft_memmove.c \
 			ft_memchr.c \
 			ft_memcmp.c \
-			ft_strlen.c
+			ft_strlen.c \
+			ft_strlcpy.c \
+			ft_strlcat.c \
+			ft_strchr.c \
+			ft_strrchr.c
 HADER_FILE = libft.h
 HEADER_FILE_DIR = .
 LIB_NAME = libft.a
@@ -35,7 +39,11 @@ OBJECT_FILES = ft_memset.o \
 			ft_memmove.o \
 			ft_memchr.o \
 			ft_memcmp.o \
-			ft_strlen.o
+			ft_strlen.o \
+			ft_strlcpy.o \
+			ft_strlcat.o \
+			ft_strchr.o \
+			ft_strrchr.o
 
 all: $(NAME)
 
