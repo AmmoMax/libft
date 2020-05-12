@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 19:50:39 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/09 14:07:20 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:31:45 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strnstr(const char *big, const char* little, size_t len);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_atoi(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 10:43:03 by amayor            #+#    #+#              #
-#    Updated: 2020/05/09 14:07:44 by amayor           ###   ########.fr        #
+#    Updated: 2020/05/12 22:32:31 by amayor           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ SRCS_FILES = ft_memset.c \
 			ft_strlcpy.c \
 			ft_strlcat.c \
 			ft_strchr.c \
-			ft_strrchr.c
+			ft_strrchr.c \
+			ft_strnstr.c \
+			ft_strncmp.c \
+			ft_atoi.c
 HADER_FILE = libft.h
 HEADER_FILE_DIR = .
 LIB_NAME = libft.a
@@ -43,7 +46,10 @@ OBJECT_FILES = ft_memset.o \
 			ft_strlcpy.o \
 			ft_strlcat.o \
 			ft_strchr.o \
-			ft_strrchr.o
+			ft_strrchr.o \
+			ft_strnstr.o \
+			ft_strncmp.o \
+			ft_atoi.o
 
 all: $(NAME)
 
