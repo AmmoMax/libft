@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/05 16:04:02 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/21 11:58:29 by amayor           ###   ########.fr       */
+/*   Created: 2020/05/21 22:18:41 by amayor            #+#    #+#             */
+/*   Updated: 2020/05/21 22:26:16 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *arr, int c, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char	*uarr;
-	size_t			i;
-
-	i = 0;
-	uarr = (unsigned char *)arr;
-	while (i < n)
-	{
-		if (uarr[i] == (unsigned char)c)
-			return ((void *)&uarr[i]);
-		i += 1;
-	}
-	return (NULL);
+	t_list *new;
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	new->next = NULL;
+	new->content = content;
+	return (new);
 }

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/05 16:04:02 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/21 11:58:29 by amayor           ###   ########.fr       */
+/*   Created: 2020/05/23 13:42:45 by amayor            #+#    #+#             */
+/*   Updated: 2020/05/23 14:24:02 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *arr, int c, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	unsigned char	*uarr;
-	size_t			i;
+	t_list *counter;
+	t_list *addr_next;
 
-	i = 0;
-	uarr = (unsigned char *)arr;
-	while (i < n)
+	counter = *lst;
+	if (lst != NULL)
 	{
-		if (uarr[i] == (unsigned char)c)
-			return ((void *)&uarr[i]);
-		i += 1;
+		while (counter)
+		{	
+			addr_next = counter->next;
+			del(counter->content);
+			free(counter);
+			counter = addr_next;
+		}
+		*lst = NULL;
 	}
-	return (NULL);
 }

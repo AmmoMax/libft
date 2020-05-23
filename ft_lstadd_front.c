@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/05 16:04:02 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/21 11:58:29 by amayor           ###   ########.fr       */
+/*   Created: 2020/05/21 22:51:33 by amayor            #+#    #+#             */
+/*   Updated: 2020/05/22 21:24:18 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *arr, int c, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	unsigned char	*uarr;
-	size_t			i;
+	t_list	*element;
 
-	i = 0;
-	uarr = (unsigned char *)arr;
-	while (i < n)
+	if(lst != NULL && new != NULL)
 	{
-		if (uarr[i] == (unsigned char)c)
-			return ((void *)&uarr[i]);
-		i += 1;
+		element = new;
+		element->next = *lst;
+		*lst = element;
 	}
-	return (NULL);
 }

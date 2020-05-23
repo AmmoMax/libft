@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 19:23:27 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/13 19:46:47 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/21 11:53:33 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') \
+			|| (c >= '0' && c <= '9'))
 		return (1);
 	return (0);
 }

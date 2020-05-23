@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 21:14:09 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/09 12:49:23 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/21 12:04:02 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t count;
-	char *d;
-	const char *s;
+	size_t		count;
+	char		*d;
+	const char	*s;
 
 	count = size;
 	d = dst;
 	s = src;
 	if (count != 0)
-	{
-		while(--count !=0)
+		while (--count != 0)
 		{
 			*d = *s;
-			if (*d == '\0' || *s =='\0')
-				break;
+			if (*d == '\0' || *s == '\0')
+				break ;
 			s++;
 			d++;
 		}
-	}
 	if (count == 0)
 	{
 		if (size != 0)
