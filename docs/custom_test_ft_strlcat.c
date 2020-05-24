@@ -44,8 +44,8 @@ int main()
 	// char dst2[] = "dst";
 	// char src2[] = "src";
 
-	printf("standart strlcat: %lud\n", strlcat(dst1, src1, 15));
-	printf("dst1: %s\n", dst1);
+	// printf("standart strlcat: %lud\n", strlcat(dst1, src1, 15));
+	// printf("dst1: %s\n", dst1);
 	printf("custom ft_strlcat: %lud\n", ft_strlcat(dst2, src2, 15));
 	printf("dst2: %s\n", dst2);
 	return 0;

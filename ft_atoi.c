@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 22:19:03 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/12 22:37:09 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/23 21:41:49 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(char *str)
 {
-	int i;
-	int sign;
-	int res;
+	int	i;
+	int	sign;
+	int	res;
 
 	i = 0;
 	sign = 1;
@@ -30,6 +30,6 @@ int	ft_atoi(char *str)
 		if (str[i++] == '-')
 			sign = -1;
 	while (str[i] >= '0' && str[i] <= '9')
-		res = 	(res * 10) + (str[i++] - '0');
+		res = (res * 10) + (str[i++] - '0');
 	return (res * sign);
 }

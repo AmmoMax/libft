@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 13:42:45 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/23 14:24:02 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/23 22:00:50 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *counter;
-	t_list *addr_next;
+	t_list	*counter;
+	t_list	*addr_next;
 
 	counter = *lst;
 	if (lst != NULL)
 	{
 		while (counter)
-		{	
+		{
 			addr_next = counter->next;
 			del(counter->content);
 			free(counter);

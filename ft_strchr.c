@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 13:11:01 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/09 13:26:37 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/23 21:36:58 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while(*s != (char)c)
+	while (*s != (char)c)
 	{
-		if(*s)
+		if (*s)
 			s++;
 		else
 			return (NULL);

@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 21:30:22 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/13 21:32:48 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/23 21:45:28 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
-	return(c);
+	return (c);
 }

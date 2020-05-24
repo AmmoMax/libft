@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:46:40 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/22 20:59:43 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/23 21:58:34 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int len;
-	t_list *begin;
+	int		len;
+	t_list	*begin;
 
 	begin = lst;
 	len = 0;

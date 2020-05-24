@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 21:29:49 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/19 21:36:56 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/23 21:56:03 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	if (s != NULL)
 	{
@@ -25,5 +25,5 @@ void	ft_putendl_fd(char *s, int fd)
 			i++;
 		}
 		write(fd, "\n", 1);
-	}	
+	}
 }

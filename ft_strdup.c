@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 23:26:21 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/14 00:30:37 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/23 21:47:28 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strdup(char *s)
 {
-	char *res;
-	char *res_start;
-	size_t len;
+	char	*res;
+	char	*res_start;
+	size_t	len;
 
 	len = ft_strlen(s);
 	if (!(res = (char *)malloc((len + 1) * sizeof(char))))
