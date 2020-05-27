@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 13:42:45 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/23 22:00:50 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/26 21:18:44 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		{
 			addr_next = counter->next;
 			del(counter->content);
+			counter->next = NULL;
 			free(counter);
 			counter = addr_next;
 		}

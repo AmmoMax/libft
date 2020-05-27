@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 18:52:01 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/23 21:48:36 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/26 18:58:22 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s == NULL)
 		return (NULL);
 	if (start > ft_strlen(s))
-		return (NULL);
+		return (ft_strdup(""));
 	else
 		max_size = ft_strlen(s) - start;
 	if (len > max_size)

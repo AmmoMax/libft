@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 17:15:38 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/17 22:32:25 by amayor           ###   ########.fr       */
+/*   Updated: 2020/05/26 18:49:18 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,20 @@ static size_t	ft_wl(const char *str, char c)
 	return (len);
 }
 
+static char		**ft_check_mem(char **r, size_t count)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(r[i]);
+		i++;
+	}
+	free(r);
+	return (NULL);
+}
+
 char			**ft_split(char const *s, char c)
 {
 	char	**r;
@@ -71,14 +85,12 @@ char			**ft_split(char const *s, char c)
 	while (i < ft_wc(s, c))
 	{
 		if (!(r[i] = (char *)malloc(sizeof(char) * (ft_wl(&s[sp], c) + 1))))
-			return (NULL);
+			return (ft_check_mem(r, i));
 		j = 0;
 		while (s[sp] == c)
 			sp++;
 		while (s[sp] != c && s[sp])
-		{
 			r[i][j++] = s[sp++];
-		}
 		r[i][j] = '\0';
 		i++;
 	}

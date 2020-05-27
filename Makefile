@@ -6,13 +6,13 @@
 #    By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 10:43:03 by amayor            #+#    #+#              #
-#    Updated: 2020/05/24 16:48:20 by amayor           ###   ########.fr        #
+#    Updated: 2020/05/27 13:12:24 by amayor           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
-COMPILER = gcc
+COMPILER = clang
 ARCHIVER = ar rc
 NAME = libft.a
 RANLIB  = ranlib
@@ -50,7 +50,7 @@ SRCS_FILES = ft_memset.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c
-HADER_FILE = libft.h
+HEADER_FILE = libft.h
 HEADER_FILE_DIR = .
 FLAGS = -c -Wall -Wextra -Werror
 OBJECT_FILES = $(SRCS_FILES:.c=.o)
@@ -67,32 +67,36 @@ BONUS_SRCS_FILES = 	ft_lstnew.c \
 
 BONUS_OBJECT_FILES = $(BONUS_SRCS_FILES:.c=.o)
 
+override OBJ_ALL ?= $(OBJECT_FILES)
+
 all: $(NAME)
 
-$(NAME): $(SRCS_FILES) $(HADER_FILE)
-	@$(COMPILER) $(FLAGS) $(SRCS_FILES) -I $(HEADER_FILE_DIR)
-	@$(ARCHIVER) $(NAME) $(OBJECT_FILES)
+$(NAME): $(OBJ_ALL) $(HEADER_FILE)
+	@$(ARCHIVER) $(NAME) $(OBJ_ALL)
 	@$(RANLIB) $(NAME)
 	@echo "[INFO] Library [$(NAME)] is created!"
-	
+
+%.o: %.c
+	$(COMPILER) $(FLAGS) -I $(HEADER_FILE_DIR) -c $< -o $@
+
 clean:
 	@rm -f $(OBJECT_FILES)
-	@echo "[INFO] Object files is removed: [$(OBJECT_FILES)]"
+	@rm -f $(BONUS_OBJECT_FILES)
+	@echo "[INFO] Object files is removed: [$(OBJECT_FILES)] and bonus: [$(BONUS_OBJECT_FILES)]"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@rm -rf $(LIB_NAME_SO)
+	@rm -rf libft.so
 	@echo "[INFO] Library [$(NAME)] is removed!"
 
-bonus: $(NAME)
-	@$(COMPILER) $(FLAGS) $(BONUS_SRCS_FILES) -I $(HEADER_FILE_DIR)
-	@$(ARCHIVER) $(NAME) $(BONUS_OBJECT_FILES)
-	@$(RANLIB) $(NAME)
-	@echo "[INFO] Bonus function is created!"
+
+bonus:
+	@make OBJ_ALL="$(OBJECT_FILES) $(BONUS_OBJECT_FILES)" all
+	@echo "[INFO] Bonus function is created and added to libft!"
 
 
 re: fclean all
 
 so:
-	gcc -c -Wall -Wextra -Werror -fPIC $(SRCS_FILES)
-	gcc -shared -o libft.so $(OBJECT_FILES) $(BONUS_OBJECT_FILES)
+	$(COMPILER) -fPIC -c -Wall -Wextra -Werror $(SRCS_FILES) $(BONUS_SRCS_FILES)
+	$(COMPILER) -shared -o libft.so $(OBJECT_FILES) $(BONUS_OBJECT_FILES)
