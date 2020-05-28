@@ -18,11 +18,6 @@ void	*ft_memcpy(void *dest, const void * src, size_t n);
 // 	return (0);
 // }
 
-// crt_memcpy.c
-// Illustrate overlapping copy: memmove
-// always handles it correctly; memcpy may handle
-// it correctly.
-//
 
 #include <memory.h>
 #include <string.h>
