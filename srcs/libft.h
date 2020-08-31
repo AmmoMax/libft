@@ -6,7 +6,7 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 19:50:39 by amayor            #+#    #+#             */
-/*   Updated: 2020/08/31 15:06:05 by amayor           ###   ########.fr       */
+/*   Updated: 2020/08/31 22:10:42 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 * Utils functions for get_next_line
 */
 char				*check_rest(char *rest, char **line);
-int					save_rest(char **rest, char *res_strchr);
+int					free_line(char **line, char **buf);
+int					check_buffer(int rb, char **res_strchr, char **buf, char **rest);
 int					get_next_line(int fd, char **line);
-int					memory_free(char **s1, char **s2);
 
 #endif

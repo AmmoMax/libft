@@ -6,7 +6,7 @@
 #    By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 10:43:03 by amayor            #+#    #+#              #
-#    Updated: 2020/08/31 14:57:55 by amayor           ###   ########.fr        #
+#    Updated: 2020/08/31 22:21:43 by amayor           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS_FILES = ft_memset.c \
 			ft_memcmp.c \
 			ft_strlen.c \
 			ft_strlcpy.c \
+			ft_strcpy.c \
 			ft_strlcat.c \
 			ft_strchr.c \
 			ft_strrchr.c \
