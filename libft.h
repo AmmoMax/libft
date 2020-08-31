@@ -6,9 +6,13 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 19:50:39 by amayor            #+#    #+#             */
-/*   Updated: 2020/05/27 13:36:10 by amayor           ###   ########.fr       */
+/*   Updated: 2020/08/31 15:06:05 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
+#endif
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -31,6 +35,7 @@ void				*ft_memchr(const void *arr, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
+char				*ft_strcpy(char *dst, const char *src);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
@@ -66,7 +71,15 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+void				ft_strclr(char *str);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 												void (*del)(void *));
+/*
+* Utils functions for get_next_line
+*/
+char				*check_rest(char *rest, char **line);
+int					save_rest(char **rest, char *res_strchr);
+int					get_next_line(int fd, char **line);
+int					memory_free(char **s1, char **s2);
 
 #endif

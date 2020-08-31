@@ -6,7 +6,7 @@
 #    By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/02 10:43:03 by amayor            #+#    #+#              #
-#    Updated: 2020/05/27 13:12:24 by amayor           ###   ########.fr        #
+#    Updated: 2020/08/31 14:57:55 by amayor           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,9 @@ SRCS_FILES = ft_memset.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c
+			ft_putnbr_fd.c \
+			ft_strclr.c \
+			get_next_line.c
 HEADER_FILE = libft.h
 HEADER_FILE_DIR = .
 FLAGS = -c -Wall -Wextra -Werror
