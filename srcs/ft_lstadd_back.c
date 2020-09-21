@@ -6,18 +6,22 @@
 /*   By: amayor <amayor@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 21:16:41 by amayor            #+#    #+#             */
-/*   Updated: 2020/09/02 20:48:29 by amayor           ###   ########.fr       */
+/*   Updated: 2020/09/02 22:54:39 by amayor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define ERROR 1
+#define OK 0
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int			ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *start;
+	t_list	*start;
 
 	if (!lst)
-		return ;
+		return (ERROR);
+	if (!new)
+		return (ERROR);
 	start = *lst;
 	if (start)
 	{
@@ -25,7 +29,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			start = start->next;
 		start->next = new;
 		new->next = NULL;
+		return (OK);
 	}
 	else
 		*lst = new;
+	return (OK);
 }
